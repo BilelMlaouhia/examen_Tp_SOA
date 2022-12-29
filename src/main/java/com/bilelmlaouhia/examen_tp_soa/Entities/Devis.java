@@ -17,7 +17,10 @@ public class Devis {
     private Long numDevis;
     private Date dateCreation;
     @OneToMany
-    private List<Article> listeArticles;
+    private List<Article> listArticles;
+    @ManyToOne
+    @JoinColumn(name = "owner_cin")
+    private Client owner;
 
 
 }
