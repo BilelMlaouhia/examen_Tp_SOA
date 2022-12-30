@@ -1,8 +1,8 @@
-package com.bilelmlaouhia.examen_tp_soa.Metier;
+package com.bilelmlaouhia.examen_tp_soa.Business.Implementation;
 
 import com.bilelmlaouhia.examen_tp_soa.Entities.Article;
 import com.bilelmlaouhia.examen_tp_soa.Entities.Client;
-import com.bilelmlaouhia.examen_tp_soa.Metier.InterfacesMetier.ArticleMetier;
+import com.bilelmlaouhia.examen_tp_soa.Business.InterfacesMetier.ArticleBusiness;
 import com.bilelmlaouhia.examen_tp_soa.Repositories.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ArticleImp implements ArticleMetier {
+public class ArticleBusiness_Implementation implements ArticleBusiness {
     @Autowired
     ArticleRepository articleRepository;
     @Override

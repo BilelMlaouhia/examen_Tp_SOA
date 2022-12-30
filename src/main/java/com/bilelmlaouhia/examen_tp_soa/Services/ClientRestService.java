@@ -2,7 +2,7 @@ package com.bilelmlaouhia.examen_tp_soa.Services;
 
 import com.bilelmlaouhia.examen_tp_soa.Entities.Client;
 import com.bilelmlaouhia.examen_tp_soa.Entities.Devis;
-import com.bilelmlaouhia.examen_tp_soa.Metier.ClientImp;
+import com.bilelmlaouhia.examen_tp_soa.Business.Implementation.ClientBusiness_Implementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class ClientRestService {
     @Autowired
-    private ClientImp clientImp;
+    private ClientBusiness_Implementation clientImp;
     @PostMapping ("/clients")
     public Client saveClient(@RequestBody Client c) {
         return clientImp.saveClient(c);

@@ -1,7 +1,7 @@
-package com.bilelmlaouhia.examen_tp_soa.Metier;
+package com.bilelmlaouhia.examen_tp_soa.Business.Implementation;
 
 import com.bilelmlaouhia.examen_tp_soa.Entities.Client;
-import com.bilelmlaouhia.examen_tp_soa.Metier.InterfacesMetier.ClientMetier;
+import com.bilelmlaouhia.examen_tp_soa.Business.InterfacesMetier.ClientBusiness;
 import com.bilelmlaouhia.examen_tp_soa.Repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ClientImp implements ClientMetier {
+public class ClientBusiness_Implementation implements ClientBusiness {
 
 
     @Autowired

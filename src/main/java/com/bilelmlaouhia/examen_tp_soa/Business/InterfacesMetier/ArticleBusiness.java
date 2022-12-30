@@ -1,4 +1,4 @@
-package com.bilelmlaouhia.examen_tp_soa.Metier.InterfacesMetier;
+package com.bilelmlaouhia.examen_tp_soa.Business.InterfacesMetier;
 
 
 import com.bilelmlaouhia.examen_tp_soa.Entities.Article;
@@ -6,7 +6,7 @@ import com.bilelmlaouhia.examen_tp_soa.Entities.Client;
 
 import java.util.List;
 
-public interface ArticleMetier {
+public interface ArticleBusiness {
 
     public Article saveArticle(Article a);
     public Article getArticleByNumArticle(Long numArticle);
