@@ -18,5 +18,7 @@ public class Article {
     private Integer quantiterEnStock;
     @ManyToOne
     private Client owner;
+    @ManyToOne
+    private Devis devis;
 
 }

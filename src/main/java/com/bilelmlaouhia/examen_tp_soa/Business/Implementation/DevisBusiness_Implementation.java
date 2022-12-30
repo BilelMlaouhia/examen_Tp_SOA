@@ -2,7 +2,7 @@ package com.bilelmlaouhia.examen_tp_soa.Business.Implementation;
 
 import com.bilelmlaouhia.examen_tp_soa.Entities.Client;
 import com.bilelmlaouhia.examen_tp_soa.Entities.Devis;
-import com.bilelmlaouhia.examen_tp_soa.Business.InterfacesMetier.DevisBusiness;
+import com.bilelmlaouhia.examen_tp_soa.Business.BusinessInterfaces.DevisBusiness;
 import com.bilelmlaouhia.examen_tp_soa.Repositories.ClientRepository;
 import com.bilelmlaouhia.examen_tp_soa.Repositories.DevisRepository;
 import org.springframework.beans.factory.annotation.Autowired;

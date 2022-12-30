@@ -26,16 +26,19 @@ public class ArticleService {
 
     @GetMapping("/articles")
     public List<Article> getAllArticles() {
+
         return articleImp.getAllArticles();
     }
 
     @DeleteMapping("/articles/id")
     public void deleteArtcile(@PathParam("id") Long numArticle) {
+
         articleImp.deleteArtcile(numArticle);
     }
 
     @GetMapping("/articles/id/owner")
     public Client getArticlesOwner(@PathParam("id") Long id){
+
         return articleImp.getOwner(id);
     }
 }

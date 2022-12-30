@@ -13,8 +13,8 @@ public class DevisService {
     @Autowired
     private DevisBusiness_Implementation devisImp;
 
-    @GetMapping("/devis/id")
-    public Devis getDevisByNumDevis(@PathParam("id") Long numDevis) {
+    @GetMapping("/devis/{id}")
+    public Devis getDevisByNumDevis(@PathVariable("id") Long numDevis) {
 
         return devisImp.getDevisByNumDevis(numDevis);
     }
@@ -25,17 +25,10 @@ public class DevisService {
         return devisImp.getAllDevis();
     }
 
-    @GetMapping("/devis/client/cin")
-    public List<Devis> getAllDevisByClientCin(@PathParam("cin") String cin) {
+    @GetMapping("/devis/client/{cin}")
+    public List<Devis> getAllDevisByClientCin(@PathVariable("cin") String cin) {
         return devisImp.getAllDevisByClientCin(cin);
     }
-/*
-    @GetMapping("/devis/list")
-    public List<Devis> getAllDevisContainArticle(@RequestBody List<Article> la) {
-        return devisImp.getAllDevisContainArticle(la);
-    }
-
- */
 
     @PostMapping("/devis")
     public Devis saveDevis(@RequestBody Devis d) {
@@ -43,8 +36,8 @@ public class DevisService {
         return devisImp.saveDevis(d);
     }
 
-@DeleteMapping("/devis/id")
-    public void deleteDevis(@PathParam("id") Long numDevis) {
+@DeleteMapping("/devis/{id}")
+    public void deleteDevis(@PathVariable("id") Long numDevis) {
 
         devisImp.deleteDevis(numDevis);
     }

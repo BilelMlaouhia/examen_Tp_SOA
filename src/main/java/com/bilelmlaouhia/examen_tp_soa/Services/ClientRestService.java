@@ -23,19 +23,22 @@ public class ClientRestService {
         return clientImp.getListClient();
     }
 
-    @DeleteMapping("/clients/id")
-    public void deleteClient(@PathParam("id") String id) {
+    @DeleteMapping("/clients/{id}")
+    public void deleteClient(@PathVariable("id") String id) {
         clientImp.deleteClient(id);
     }
 
-    @GetMapping("/clients/id")
-    public Client getClientByCIN( @PathParam("id") String cin) {
+    @GetMapping("/clients/{id}")
+    public Client getClientByCIN( @PathVariable("id") String cin) {
+        System.out.println("get client id: "+cin);
         return clientImp.getClientByCIN(cin);
     }
 
-    @GetMapping("/clients/id/mesDevis")
-    public List<Devis> getAllMyDevis(@PathParam("id") String cin){
-        return clientImp.getClientByCIN(cin).getMesDevis();
+    @GetMapping("/clients/{id}/mesDevis")
+    public List<Devis> getAllMyDevis(@PathVariable("id") String cin){
+
+       return clientImp.getClientByCIN(cin).getMesDevis();
+
     }
 
 

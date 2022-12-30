@@ -12,11 +12,12 @@ import java.util.List;
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Client {
     @Id
-    private Long cin;
+    private String cin;
     private String nom;
     private String prenom;
     private String adress;
     private String tel;
+
     @OneToMany
     private List<Devis> mesDevis = new ArrayList<>();
 }

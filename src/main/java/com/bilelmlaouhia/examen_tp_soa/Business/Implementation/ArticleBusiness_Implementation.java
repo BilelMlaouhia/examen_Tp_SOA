@@ -2,7 +2,7 @@ package com.bilelmlaouhia.examen_tp_soa.Business.Implementation;
 
 import com.bilelmlaouhia.examen_tp_soa.Entities.Article;
 import com.bilelmlaouhia.examen_tp_soa.Entities.Client;
-import com.bilelmlaouhia.examen_tp_soa.Business.InterfacesMetier.ArticleBusiness;
+import com.bilelmlaouhia.examen_tp_soa.Business.BusinessInterfaces.ArticleBusiness;
 import com.bilelmlaouhia.examen_tp_soa.Repositories.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

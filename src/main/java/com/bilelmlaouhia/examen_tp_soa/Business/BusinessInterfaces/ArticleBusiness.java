@@ -1,4 +1,4 @@
-package com.bilelmlaouhia.examen_tp_soa.Business.InterfacesMetier;
+package com.bilelmlaouhia.examen_tp_soa.Business.BusinessInterfaces;
 
 
 import com.bilelmlaouhia.examen_tp_soa.Entities.Article;
