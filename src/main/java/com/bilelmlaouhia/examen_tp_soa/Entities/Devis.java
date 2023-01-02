@@ -1,9 +1,11 @@
 package com.bilelmlaouhia.examen_tp_soa.Entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 import javax.persistence.*;
 import java.util.Date;
@@ -19,9 +21,11 @@ public class Devis {
     private Date dateCreation;
 
     @OneToMany
+    @JsonIgnore
     private List<Article> listArticles;
 
     @ManyToOne
+    @JsonIgnore
     private Client owner;
 
 

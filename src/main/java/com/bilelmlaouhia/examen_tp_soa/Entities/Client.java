@@ -1,8 +1,10 @@
 package com.bilelmlaouhia.examen_tp_soa.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -19,5 +21,6 @@ public class Client {
     private String tel;
 
     @OneToMany
+    @JsonIgnore
     private List<Devis> mesDevis = new ArrayList<>();
 }
