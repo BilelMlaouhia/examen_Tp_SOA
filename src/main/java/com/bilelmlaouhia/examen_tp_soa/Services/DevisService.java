@@ -1,17 +1,16 @@
 package com.bilelmlaouhia.examen_tp_soa.Services;
 
+import com.bilelmlaouhia.examen_tp_soa.Business.BusinessInterfaces.DevisBusiness;
 import com.bilelmlaouhia.examen_tp_soa.Entities.Devis;
-import com.bilelmlaouhia.examen_tp_soa.Business.Implementation.DevisBusiness_Implementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController
 public class DevisService {
     @Autowired
-    private DevisBusiness_Implementation devisImp;
+    private DevisBusiness devisImp;
 
     @GetMapping("/devis/{id}")
     public Devis getDevisByNumDevis(@PathVariable("id") Long numDevis) {
