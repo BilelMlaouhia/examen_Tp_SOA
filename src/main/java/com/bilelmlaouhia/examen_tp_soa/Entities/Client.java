@@ -22,7 +22,7 @@ public class Client {
     private String tel;
 
     @OneToMany
-    @JsonIgnore
-    @JsonSetter
+  //  @JsonIgnore
+    //@JsonSetter
     private List<Devis> mesDevis = new ArrayList<>();
 }

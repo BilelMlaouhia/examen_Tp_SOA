@@ -1,6 +1,7 @@
 package com.bilelmlaouhia.examen_tp_soa.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,9 +19,11 @@ public class Article {
     private Integer quantiterEnStock;
     @ManyToOne
     @JsonIgnore
+    @JsonSetter
     private Client owner;
     @ManyToOne
     @JsonIgnore
+    @JsonSetter
     private Devis devis;
 
 }

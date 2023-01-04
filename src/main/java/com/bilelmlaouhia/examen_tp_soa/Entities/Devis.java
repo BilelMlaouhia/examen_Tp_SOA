@@ -27,8 +27,8 @@ public class Devis {
     private List<Article> listArticles;
 
     @ManyToOne
-    @JsonIgnore
-    @JsonSetter
+    // @JsonIgnore
+   // @JsonSetter
     private Client owner;
 
 

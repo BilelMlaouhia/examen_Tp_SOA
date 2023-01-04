@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 public class ArticleService {
     @Autowired
-    ArticleBusiness articleImp;
+   private ArticleBusiness articleImp;
 
     @PostMapping("/articles")
     public Article saveArticle(@RequestBody Article a) {
