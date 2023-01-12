@@ -35,10 +35,12 @@ public class ArticleService {
 
         articleImp.deleteArtcile(numArticle);
     }
-
+/*
     @GetMapping("/articles/id/owner")
     public Client getArticlesOwner(@PathParam("id") Long id){
 
         return articleImp.getOwner(id);
     }
+
+ */
 }

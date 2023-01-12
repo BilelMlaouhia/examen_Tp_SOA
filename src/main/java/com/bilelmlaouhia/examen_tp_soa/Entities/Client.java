@@ -20,9 +20,10 @@ public class Client {
     private String prenom;
     private String adress;
     private String tel;
+    private String password;
 
     @OneToMany
-  //  @JsonIgnore
-    //@JsonSetter
+    @JsonIgnore
+    @JsonSetter
     private List<Devis> mesDevis = new ArrayList<>();
 }

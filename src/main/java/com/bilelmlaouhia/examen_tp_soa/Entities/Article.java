@@ -17,10 +17,13 @@ public class Article {
     private String libeller;
     private Double prixUnitaire;
     private Integer quantiterEnStock;
+    /*
     @ManyToOne
     @JsonIgnore
     @JsonSetter
     private Client owner;
+
+     */
     @ManyToOne
     @JsonIgnore
     @JsonSetter

@@ -10,4 +10,5 @@ public interface ClientBusiness {
     public List<Client> getListClient();
     public void deleteClient(String id);
     public Client getClientByCIN(String cin);
+    public Client getClientByNomAndPassword(String nom,String password);
 }

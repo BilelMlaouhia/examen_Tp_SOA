@@ -32,11 +32,13 @@ public class ArticleBusiness_Implementation implements ArticleBusiness {
     public void deleteArtcile(Long id) {
          articleRepository.deleteById(id);
     }
-
+/*
     @Override
     public Client getOwner(Long id) {
        Article a = articleRepository.findById(id).get();
        return a.getOwner();
     }
+
+ */
 
 }

@@ -35,5 +35,10 @@ public class ClientBusiness_Implementation implements ClientBusiness {
         return this.clientRepository.findById(cin).get();
     }
 
+    @Override
+    public Client getClientByNomAndPassword(String nom, String password) {
+        return this.clientRepository.getClientByNomAndPassword(nom,password);
+    }
+
 
 }

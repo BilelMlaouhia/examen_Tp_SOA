@@ -12,7 +12,7 @@ public interface ArticleBusiness {
     public Article getArticleByNumArticle(Long numArticle);
     public List<Article> getAllArticles();
     public void deleteArtcile(Long id);
-    public Client getOwner(Long id);
+   // public Client getOwner(Long id);
 
 
 }

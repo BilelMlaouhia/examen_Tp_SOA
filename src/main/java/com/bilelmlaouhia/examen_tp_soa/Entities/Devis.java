@@ -22,13 +22,13 @@ public class Devis {
     private Date dateCreation;
 
     @OneToMany
-    @JsonIgnore
-    @JsonSetter
+    //@JsonIgnore
+   // @JsonSetter
     private List<Article> listArticles;
 
     @ManyToOne
-    // @JsonIgnore
-   // @JsonSetter
+     @JsonIgnore
+    @JsonSetter
     private Client owner;
 
 
