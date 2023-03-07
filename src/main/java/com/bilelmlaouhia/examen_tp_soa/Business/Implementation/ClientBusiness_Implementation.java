@@ -3,7 +3,6 @@ package com.bilelmlaouhia.examen_tp_soa.Business.Implementation;
 import com.bilelmlaouhia.examen_tp_soa.Entities.Client;
 import com.bilelmlaouhia.examen_tp_soa.Business.BusinessInterfaces.ClientBusiness;
 import com.bilelmlaouhia.examen_tp_soa.Repositories.ClientRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,8 +11,12 @@ import java.util.List;
 public class ClientBusiness_Implementation implements ClientBusiness {
 
 
-    @Autowired
-    ClientRepository clientRepository;
+    private final ClientRepository clientRepository;
+
+    public ClientBusiness_Implementation(ClientRepository clientRepository) {
+        this.clientRepository = clientRepository;
+    }
+
     @Override
     public Client saveClient(Client c) {
         return this.clientRepository.save(c);
@@ -37,6 +40,7 @@ public class ClientBusiness_Implementation implements ClientBusiness {
 
     @Override
     public Client getClientByNomAndPassword(String nom, String password) {
+        System.out.println("client: "+nom+" pwd: "+password);
         return this.clientRepository.getClientByNomAndPassword(nom,password);
     }
 

@@ -1,6 +1,7 @@
 package com.bilelmlaouhia.examen_tp_soa.Services;
 
 import com.bilelmlaouhia.examen_tp_soa.Business.BusinessInterfaces.ClientBusiness;
+import com.bilelmlaouhia.examen_tp_soa.Business.BusinessInterfaces.DevisBusiness;
 import com.bilelmlaouhia.examen_tp_soa.Entities.Client;
 import com.bilelmlaouhia.examen_tp_soa.Entities.Devis;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +10,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class ClientRestService {
-    @Autowired
-    private ClientBusiness clientImp;
+public class ClientService {
+    private final ClientBusiness clientImp;
+    private final DevisBusiness devisImp;
+
+    public ClientService(ClientBusiness clientImp, DevisBusiness devsImp) {
+        this.clientImp = clientImp;
+        this.devisImp = devsImp;
+    }
+
     @PostMapping ("/clients")
     public Client saveClient(@RequestBody Client c) {
         return clientImp.saveClient(c);
@@ -35,9 +42,7 @@ public class ClientRestService {
 
     @GetMapping("/clients/{id}/mesDevis")
     public List<Devis> getAllMyDevis(@PathVariable("id") String cin){
-
-       return clientImp.getClientByCIN(cin).getMesDevis();
-
+        return devisImp.getAllDevisByClientCin(cin);
     }
 
 

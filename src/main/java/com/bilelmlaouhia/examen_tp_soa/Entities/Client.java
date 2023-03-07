@@ -1,19 +1,24 @@
 package com.bilelmlaouhia.examen_tp_soa.Entities;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data @NoArgsConstructor @AllArgsConstructor
-public class Client {
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Client implements Serializable {
+    public Client(String cin) {
+        this.cin = cin;
+    }
+
     @Id
     private String cin;
     private String nom;
@@ -21,9 +26,8 @@ public class Client {
     private String adress;
     private String tel;
     private String password;
+    private String role;
 
-    @OneToMany
-    @JsonIgnore
-    @JsonSetter
+    @OneToMany (mappedBy ="owner",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Devis> mesDevis = new ArrayList<>();
 }

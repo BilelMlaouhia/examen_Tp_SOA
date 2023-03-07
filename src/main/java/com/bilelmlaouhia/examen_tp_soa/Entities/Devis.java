@@ -1,35 +1,34 @@
 package com.bilelmlaouhia.examen_tp_soa.Entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 
 @Entity
-@Data @AllArgsConstructor @NoArgsConstructor
-public class Devis {
+@Getter
+@Setter
+@AllArgsConstructor @NoArgsConstructor
+@ToString
+@Builder
+public class Devis implements Serializable {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numDevis;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date dateCreation;
 
-    @OneToMany
-    //@JsonIgnore
-   // @JsonSetter
-    private List<Article> listArticles;
+//    @OneToMany (mappedBy = "NumArticle",fetch = FetchType.LAZY)
+//    private List<Article> listArticles;
 
-    @ManyToOne
-     @JsonIgnore
-    @JsonSetter
+    @ManyToOne (fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinColumn(name = "cin")
     private Client owner;
+    @OneToMany(mappedBy = "devis")
+    private List<LigneDevis> devisList;
 
 
 }

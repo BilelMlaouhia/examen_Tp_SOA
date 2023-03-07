@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface ClientBusiness {
 
-    public Client saveClient(Client c);
-    public List<Client> getListClient();
-    public void deleteClient(String id);
-    public Client getClientByCIN(String cin);
-    public Client getClientByNomAndPassword(String nom,String password);
+     Client saveClient(Client c);
+     List<Client> getListClient();
+     void deleteClient(String id);
+     Client getClientByCIN(String cin);
+     Client getClientByNomAndPassword(String nom,String password);
 }

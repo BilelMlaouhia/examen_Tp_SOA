@@ -2,7 +2,6 @@ package com.bilelmlaouhia.examen_tp_soa.Services;
 
 import com.bilelmlaouhia.examen_tp_soa.Business.BusinessInterfaces.ClientBusiness;
 import com.bilelmlaouhia.examen_tp_soa.Entities.Client;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,9 +15,10 @@ public class AuthService {
 
     @PostMapping("/auth")
     public String isAuth(@RequestParam(name = "nom") String clientName, @RequestParam(name = "password") String clientPassword){
-        Client c = this.clientBusiness.getClientByNomAndPassword(clientName,clientPassword);
+        Client c = clientBusiness.getClientByNomAndPassword(clientName,clientPassword);
+        System.out.println("client: "+c);
         if(c!=null){
-            return "wlc"+c.getPrenom()+"to"+c.getCin();
+            return "wlc."+c.getCin()+"."+c.getPrenom()+"."+c.getRole();
         }
         return null;
     }
