@@ -6,13 +6,14 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                if(isUnix()){
-                    sh "'${mvnhome}/bin/mvn' clean install"}
-
-
-                if (!isUnix()) {
-                    bat label: 'Build', script: "\"${mvnhome}/bin/mvn\" clean install"}
+                script{
+                    if(isUnix()){
+                        sh "'${mvnhome}/bin/mvn' clean install"
+                    }else {
+                        bat "\"${mvnhome}/bin/mvn\" clean install"}
+                    }
                 }
+
             }
         }
     }
